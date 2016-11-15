@@ -1,6 +1,6 @@
 <?php
 // This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)
-require_once 'HTTP/Request2.php';
+//require_once 'HTTP/Request2.php';
 echo "test122";
 /*
 $request = new Http_Request2('https://api.projectoxford.ai/vision/v1.0/analyze');
