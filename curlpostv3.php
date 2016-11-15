@@ -20,4 +20,6 @@ curl_close($cURL);
 
 print_r($result);
 
+echo "printing to see if it works";
+
 ?>
