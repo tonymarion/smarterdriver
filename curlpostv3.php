@@ -18,8 +18,9 @@ $result = curl_exec($cURL);
 
 curl_close($cURL);
 
-print_r($result);
+$json = json_decode($result, true);
+print_r($json);
 
-echo "printing to see if it works";
+echo "printing to see if it works2";
 
 ?>
