@@ -39,21 +39,14 @@
             // Request body
             //data: "{body}",
             data: JSON.stringify({ "url": "http://i1.mirror.co.uk/incoming/article6395000.ece/ALTERNATES/s1200/MAIN-David-Beckham-next-James-Bond.jpg" }),
-          
-                        var json_obj = $.parseJSON(data);//parse JSON
-            
-            var output="<ul>";
-            for (var i in json_obj) 
-            {
-                output+="<li>" + json_obj[i].Language + ",  " + json_obj[i].ID + "</li>";
-            }
-            output+="</ul>";
-            
-            $('span').html(output);
+         
         
         })
         .done(function(data) {
-            alert("success");
+            var json_obj = $.parseJSON(data);//parse JSON
+            
+            alert(json_obj);
+            //alert("success");
 
         })
         .fail(function() {
