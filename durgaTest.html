@@ -42,11 +42,42 @@
      
         })
         .done(function(data) {
-            var names = data
-            $('#cand').html(data);
-            alert(JSON.stringify(data));
-           
+           // alert(JSON.stringify(data));
+           var dataString = JSON.stringify(response); 
+var data = JSON.parse(dataString); 
+
+    //draw rectangle for each face
+    $.each(data.Faces, function (index, value) {
+
+        var rect = document.createElement('div');
+        rect.className = "rect";
+        rect.style.height = value.faceRectangle.height + "px";
+        rect.style.width = value.faceRectangle.width + "px";
+        rect.style.left = value.faceRectangle.left + "px";
+        rect.style.top = value.faceRectangle.top + "px";
+        rect.id = "rect" + index;
+
+        $('#result').append(rect);
+
+        //add popover
+        var popoverBody = "Happiness: " + Number((value.scores.happiness).toFixed(2))
+            + "<br>Fear: " + Number((value.scores.fear).toFixed(2))
+            + "<br>Anger: " + Number((value.scores.anger).toFixed(2))
+            + "<br>Contempt: " + Number((value.scores.contempt).toFixed(2))
+            + "<br>Disgust: " + Number((value.scores.disgust).toFixed(2))
+            + "<br>Neutral: " + Number((value.scores.neutral).toFixed(2))
+            + "<br>Sadness: " + Number((value.scores.sadness).toFixed(2))
+            + "<br>Surprise: " + Number((value.scores.surprise).toFixed(2));
+        $('#rect' + index).popover({
+            title: (index + 1)
+            content: popoverBody,
+            html: "true",
+            trigger: "click"
+        });
+
+    });
         })
+        //end of fata function
         .fail(function() {
             alert("error");
         });
