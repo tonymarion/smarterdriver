@@ -45,11 +45,9 @@
 		           alert(JSON.stringify(data));
              var data1=JSON.stringify(data);
              var JSONObj = data1;
-		
-
-         document.write("<h3>Website Name = "+JSONObj.scores+"</h3>");  
-         document.write("<h3>Year = "+JSONObj.year+"</h3>");  
-           
+	for(i = 0;i<data1.scores.length;i++){			
+         document.write("<h3>Website Name = "+JSONObj.anger+"</h3>");  
+	}
         })
         .fail(function() {
             alert("error");
