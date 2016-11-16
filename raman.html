@@ -38,16 +38,16 @@
             type: "POST",
             // Request body
             //data: "{body}",
-            data1: JSON.stringify({ "url": "http://i1.mirror.co.uk/incoming/article6395000.ece/ALTERNATES/s1200/MAIN-David-Beckham-next-James-Bond.jpg" }),
+            data: JSON.stringify({ "url": "http://i1.mirror.co.uk/incoming/article6395000.ece/ALTERNATES/s1200/MAIN-David-Beckham-next-James-Bond.jpg" }),
          
         
         })
-        .done(function(data1) {
-            alert(JSON.stringify(data1));
-        var data = JSON.parse(data1); 
+        .done(function(data) {
+            alert(JSON.stringify(data));
+        var data1 = JSON.parse(data); 
 
     //draw rectangle for each face
-    $.each(data.Faces, function (index, value) {
+    $.each(data1.Faces, function (index, value) {
 
         var rect = document.createElement('div');
         rect.className = "rect";
@@ -77,7 +77,7 @@
 
     });
             alert("check");
-        })
+        });
         .fail(function() {
             alert("error");
         });
