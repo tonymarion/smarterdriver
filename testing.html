@@ -43,7 +43,10 @@
         
         })
         .done(function(data) {
-            alert(JSON.stringify(data));
+            for (i = 0; i < data.data.item.length; i++) {
+             alert(data.data.item[i].FromMember);
+            }
+           // alert(JSON.stringify(data));
             //alert(JSON.faceRectangle);
             alert("success");
 
