@@ -1,46 +1,53 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="responsiveslides.min.js"></script>
 
-<ul class="rslides">
-  <li><img src="https://opensource.org/files/osi_keyhole_300X300_90ppi_0.png" alt=""></li>
-  <li><img src="2.jpg" alt=""></li>
-  <li><img src="3.jpg" alt=""></li>
-</ul>
-
-.rslides {
-  position: relative;
-  list-style: none;
-  overflow: hidden;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  }
-
-.rslides li {
-  -webkit-backface-visibility: hidden;
-  position: absolute;
-  display: none;
-  width: 100%;
-  left: 0;
-  top: 0;
-  }
-
-.rslides li:first-child {
-  position: relative;
-  display: block;
-  float: left;
-  }
-
-.rslides img {
-  display: block;
-  height: auto;
-  float: left;
-  width: 100%;
-  border: 0;
-  }
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ResponsiveSlides.js &middot; With captions</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../responsiveslides.css?v=1.13" />
+  <link rel="stylesheet" href="themes.css?v=1.13" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="../responsiveslides.min.js?v=1.6"></script>
   <script>
-  $(function() {
-    $(".rslides").responsiveSlides();
-  });
-</script>
+    $(function () {
+
+      // Slideshow 1
+      $("#slides1").responsiveSlides({
+        auto: false,
+        pagination: true,
+        nav: true,
+        fade: 500,
+        maxwidth: 800
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <h1>With captions</h1>
+
+    <div class="rslides_container">
+      <ul id="slides1" class="rslides">
+        <li>
+          <img src="../1.jpg" alt="" />
+          <p class="caption">Donec id elit non mi porta gravida at eget metus.</p>
+        </li>
+        <li>
+          <img src="../2.jpg" alt="" />
+          <p class="caption">Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </li>
+        <li>
+          <img src="../3.jpg" alt="" />
+          <p class="caption">Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+        </li>
+      </ul>
+    </div>
+
+    <a href="http://responsiveslides.com/">View ResponsiveSlides.js documentation</a>
+
+  </div>
+
+</body>
+</html>
