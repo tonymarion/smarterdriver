@@ -43,11 +43,11 @@
         })
         .done(function(data) {
            // alert(JSON.stringify(data));
-           var dataString = JSON.stringify(response); 
-var data = JSON.parse(dataString); 
+           var dataString = JSON.stringify(data); 
+var data1 = JSON.parse(dataString); 
 
     //draw rectangle for each face
-    $.each(data.Faces, function (index, value) {
+    $.each(data1.Faces, function (index, value) {
 
         var rect = document.createElement('div');
         rect.className = "rect";
