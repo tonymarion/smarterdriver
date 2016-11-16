@@ -43,13 +43,13 @@
         })
         .done(function(data) {
 		           alert(JSON.stringify(data));
-		    document.write ("HEIGHT " + data + );
+		  
             var dataString = JSON.parse(JSON.stringify(data)); 
 		    var height = dataString[0].faceRectangle.height;
 		    var top = dataString[0].faceRectangle.top;
 		    var left = dataString[0].faceRectangle.left;
 		    var width = dataString[0].faceRectangle.width;
-
+  		   document.write ("HEIGHT " + data + );
 		    document.write ("HEIGHT " + height + " TOP " + top + " LEFT " + left + " WIDTH " + width);
 	
 
