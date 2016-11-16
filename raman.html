@@ -44,9 +44,10 @@
         })
         .done(function(data) {
             alert(JSON.stringify(data));
-           String loudScreaming = JSON.getJSONObject("faceRectangle").getString("height");
-            alert(loudScreaming);
-            alert("data1");
+           var dataString = JSON.stringify(data); 
+var data1 = JSON.parse(dataString); 
+            alert(data1);
+
             //var obj = JSON.parse(data.responseText);
           //alert(obj);
        
