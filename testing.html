@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSSample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+                                function convertFileToDataURLviaFileReader(url, callback) {
+                  var xhr = new XMLHttpRequest();
+                  xhr.responseType = 'blob';
+                  xhr.onload = function() {
+                    var reader = new FileReader();
+                    reader.onloadend = function() {
+                      callback(reader.result);
+                    }
+                    reader.readAsDataURL(xhr.response);
+                  };
+                  xhr.open('GET', url);
+                  xhr.send();
+                }
+    $(function() {
+        var params = {
+                
+                //"url": "https://ppolassets.azureedge.net/wp-content/uploads/2016/06/marvel-heroes-detect-faces.jpg"
+                
+            
+        };
+      
+        $.ajax({
+            url: "https://api.projectoxford.ai/emotion/v1.0/recognize" ,
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Content-Type","application/json");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","15d6c2ae0c53413b8da538f6712f8f93");
+            },
+            type: "POST",
+            // Request body
+            //data: "{body}",
+            data: JSON.stringify({ "url": "http://i1.mirror.co.uk/incoming/article6395000.ece/ALTERNATES/s1200/MAIN-David-Beckham-next-James-Bond.jpg" }),
+          
+        })
+        .done(function(data) {
+            alert("success");
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+</script>
+</body>
+</html>
