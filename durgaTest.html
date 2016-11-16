@@ -43,14 +43,14 @@
         })
         .done(function(data) {
 	//	           alert(JSON.stringify(data));
-             var data1=JSON.stringify(data);
+            var dataString = JSON.parse(JSON.stringify(data)); 
+		    var height = dataString[0].faceRectangle.height;
+		    var top = dataString[0].faceRectangle.top;
+		    var left = dataString[0].faceRectangle.left;
+		    var width = dataString[0].faceRectangle.width;
 
-		document.write("<h3>Website Name111 = "+data1+"</h3>"); 
-		var n = data1.split(":");
-		//string  n1 = n.replace("]","");
-		
-		
-	document.write("<h3>Website Name111-- "+n+"</h3>"); 
+		    document.write ("HEIGHT " + height + " TOP " + top + " LEFT " + left + " WIDTH " + width);
+	
 
         })
         .fail(function() {
