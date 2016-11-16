@@ -39,10 +39,11 @@
             // Request body
             //data: "{body}",
             data: JSON.stringify({ "url": "http://i1.mirror.co.uk/incoming/article6395000.ece/ALTERNATES/s1200/MAIN-David-Beckham-next-James-Bond.jpg" }),
-         
+           var jsonString =JSON.stringify({ "url": "http://i1.mirror.co.uk/incoming/article6395000.ece/ALTERNATES/s1200/MAIN-David-Beckham-next-James-Bond.jpg" }),
         
         })
         .done(function(data) {
+            console.log(jsonString);
             alert(JSON.stringify(data));
             var obj = JSON.parse(data);
       alert(document.getElementById("demo"));
