@@ -44,12 +44,12 @@
         })
         .done(function(data) {
             alert(JSON.stringify(data));
-            var data1=JSON.stringify(data);
-            alert("data1");
-            //var obj = JSON.parse(data.responseText);
-          //alert(obj);
-       
- //data1.getElementById("faceRectangle");
+            var obj = JSON.parse(data);
+        document.getElementById("sadness").innerHTML =
+        obj.name + "<br>" +
+        obj.street + "<br>" +
+        obj.phone;
+
             alert("check");
         })
         .fail(function() {
