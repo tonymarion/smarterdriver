@@ -43,14 +43,23 @@
         })
         .done(function(data) {
 		     //      alert(JSON.stringify(data));
-		 var data1 =JSON.stringify(data);
-            var dataString = JSON.parse(JSON.stringify(data)); 
+		// var data1 =JSON.stringify(data);
+            //var dataString = JSON.parse(JSON.stringify(data)); 
 		    var height = dataString[0].faceRectangle.height;
 		    var top = dataString[0].faceRectangle.top;
 		    var left = dataString[0].faceRectangle.left;
 		    var width = dataString[0].faceRectangle.width;
+		    var anger = dataString[0].scores.anger;
+		    var contempt = dataString[0].scores.contempt;
+		    var disgust = dataString[0].scores.disgust;
+		    var fear = dataString[0].scores.fear;
+		    var happiness = dataString[0].scores.happiness;
+		    var neutral = dataString[0].scores.neutral;
+		    var sadness = dataString[0].scores.sadness;
+		    var surprise = dataString[0].scores.surprise;		
   		    document.write (" WIDTH " + data1);
 		    document.write ("HEIGHT " + height + " TOP " + top + " LEFT " + left + " WIDTH " + width);
+		    document.write ("anger " + anger + " fear " + fear + " happiness " + happiness + " neutral " + neutral);
 	
 
         })
