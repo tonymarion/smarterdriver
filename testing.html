@@ -42,7 +42,9 @@
           
         })
         .done(function(data) {
-            alert("success" + data);
+            obj = JSON.parse(data);
+            alert("success" + obj);
+alert(obj.count);
         })
         .fail(function() {
             alert("error");
