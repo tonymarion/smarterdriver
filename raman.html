@@ -45,7 +45,7 @@
         .done(function(data) {
             alert(JSON.stringify(data));
             alert("test");
-            var obj = JSON.parse(data);
+            var obj = JSON.stringify(data);
           alert(obj.count);
         })
         .fail(function() {
