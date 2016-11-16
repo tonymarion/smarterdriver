@@ -46,7 +46,7 @@
              var data1=JSON.stringify(data);
              var JSONObj = data1;
 	for(i = 0;i<data1.scores.length;i++){			
-         document.write("<h3>Website Name = "+JSONObj.anger+"</h3>");  
+         document.write("<h3>Website Name = "+JSONObj.scores[i].anger+"</h3>");  
 	}
         })
         .fail(function() {
