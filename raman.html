@@ -38,13 +38,13 @@
             type: "POST",
             // Request body
             //data: "{body}",
-            data: JSON.stringify({ "url": "http://i1.mirror.co.uk/incoming/article6395000.ece/ALTERNATES/s1200/MAIN-David-Beckham-next-James-Bond.jpg" }),
+            data1: JSON.stringify({ "url": "http://i1.mirror.co.uk/incoming/article6395000.ece/ALTERNATES/s1200/MAIN-David-Beckham-next-James-Bond.jpg" }),
          
         
         })
-        .done(function(data) {
-            alert(JSON.stringify(data));
-        var data = JSON.parse(data); 
+        .done(function(data1) {
+            alert(JSON.stringify(data1));
+        var data = JSON.parse(data1); 
 
     //draw rectangle for each face
     $.each(data.Faces, function (index, value) {
